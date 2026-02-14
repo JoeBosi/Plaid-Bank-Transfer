@@ -26,6 +26,8 @@ plaid-bank-transfer/
 │   │   ├── TransactionsTable.jsx  # Transaction display component
 │   │   └── index.jsx     # Entry point
 │   └── package.json      # Frontend dependencies
+├── render.yaml           # Render Blueprint (backend + static frontend)
+├── DEPLOY_RENDER.md      # Deploy on Render instructions
 ├── SETUP_GUIDE.md        # Complete WSL setup instructions
 ├── ARCHITECTURE.md       # Detailed architecture documentation
 ├── PROJECT_STATE.md      # Current project status
@@ -109,8 +111,15 @@ Get your credentials from [Plaid Dashboard](https://dashboard.plaid.com/develope
 - Automatic payment verification
 - Order status updates
 
+## Deploy on Render
+
+You can deploy both backend and frontend on [Render](https://render.com) (free tier). The repo includes a Blueprint (`render.yaml`) that defines the two services.
+
+See **[DEPLOY_RENDER.md](DEPLOY_RENDER.md)** for step-by-step instructions (connect repo, set env vars, deploy).
+
 ## Documentation
 
+- **[DEPLOY_RENDER.md](DEPLOY_RENDER.md)**: Deploy backend + frontend on Render
 - **[SETUP_GUIDE.md](SETUP_GUIDE.md)**: Complete WSL setup guide
 - **[ARCHITECTURE.md](ARCHITECTURE.md)**: Architecture and technical details
 - **[PROJECT_STATE.md](PROJECT_STATE.md)**: Current project status

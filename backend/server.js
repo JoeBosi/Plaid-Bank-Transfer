@@ -37,7 +37,8 @@ const cors = require('cors');
 const moment = require('moment');
 
 // Configuration from environment variables
-const APP_PORT = process.env.APP_PORT || 4001;
+// Render and most PaaS set PORT; fallback to APP_PORT or 4001 for local
+const APP_PORT = process.env.PORT || process.env.APP_PORT || 4001;
 const PLAID_CLIENT_ID = process.env.PLAID_CLIENT_ID;
 const PLAID_SECRET = process.env.PLAID_SECRET;
 const PLAID_ENV = process.env.PLAID_ENV || 'sandbox';

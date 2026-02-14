@@ -1,0 +1,37 @@
+# Render Blueprint - Plaid-Bank-Transfer
+# Author: Giuseppe Bosi
+# Deploy: connect this repo in Render Dashboard and use "Blueprint" to create both services.
+
+services:
+  # Backend: Node/Express + Plaid API
+  - type: web
+    runtime: node
+    name: plaid-backend
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: PLAID_CLIENT_ID
+        sync: false
+      - key: PLAID_SECRET
+        sync: false
+      - key: PLAID_ENV
+        value: sandbox
+      - key: SENTRY_DSN
+        sync: false
+
+  # Frontend: React static site (set REACT_APP_API_URL in Dashboard to backend URL)
+  - type: web
+    runtime: static
+    name: plaid-frontend
+    rootDir: frontend
+    buildCommand: npm run build
+    staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_API_URL
+        sync: false
+      - key: REACT_APP_SENTRY_DSN
+        sync: false
+      - key: REACT_APP_ENV
+        value: production

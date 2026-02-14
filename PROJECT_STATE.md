@@ -35,6 +35,7 @@
 - [x] Package.json files for both backend and frontend
 - [x] Sentry error tracking configured (backend and frontend)
 - [x] Test suite structure created (API and UI tests)
+- [x] Repo prepared for Render: render.yaml Blueprint, DEPLOY_RENDER.md, backend uses PORT for PaaS
 
 ## In Progress
 
@@ -53,6 +54,7 @@
 5. Execute MCP-based API and UI tests
 6. Verify Sentry error reporting (trigger test errors)
 7. Move to Step 2: Order code matching logic
+8. (Optional) Deploy on Render: follow [DEPLOY_RENDER.md](DEPLOY_RENDER.md)
 
 ## Project Structure
 
