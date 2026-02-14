@@ -1,0 +1,230 @@
+/**
+ * TransactionsTable Component Styles
+ * Author: Giuseppe Bosi
+ */
+
+.transactions-table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-info {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.table-info p {
+  margin: 0.25rem 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #dee2e6;
+  border-radius: 4px;
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  font-size: 0.9rem;
+}
+
+.transactions-table thead {
+  background-color: #f8f9fa;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.transactions-table th {
+  padding: 1rem 0.75rem;
+  text-align: left;
+  font-weight: 600;
+  color: #333;
+  border-bottom: 2px solid #dee2e6;
+  white-space: nowrap;
+}
+
+.transactions-table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+  vertical-align: top;
+}
+
+.transaction-row {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.transaction-row:hover {
+  background-color: #f8f9fa;
+}
+
+.transaction-row.expanded {
+  background-color: #e7f3ff;
+}
+
+.name-cell {
+  max-width: 200px;
+  word-wrap: break-word;
+}
+
+.amount-cell {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.amount-cell.positive {
+  color: #28a745;
+}
+
+.amount-cell.negative {
+  color: #dc3545;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.status-badge.status-pending {
+  background-color: #ffc107;
+  color: #856404;
+}
+
+.status-badge.status-posted {
+  background-color: #28a745;
+  color: white;
+}
+
+.toggle-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #007bff;
+  padding: 0.25rem 0.5rem;
+}
+
+.toggle-button:hover {
+  color: #0056b3;
+}
+
+.details-row {
+  background-color: #f8f9fa;
+}
+
+.details-row td {
+  padding: 0;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.transaction-details {
+  padding: 1.5rem;
+}
+
+.transaction-details h4 {
+  margin: 0 0 1rem 0;
+  color: #333;
+  font-size: 1.1rem;
+}
+
+.fields-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.field-group {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #dee2e6;
+}
+
+.field-group h5 {
+  margin: 0 0 0.75rem 0;
+  color: #007bff;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.5rem;
+}
+
+.field-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.field-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.field-item strong {
+  color: #666;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+
+.field-item .field-value {
+  color: #333;
+  word-break: break-word;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  background-color: #f8f9fa;
+  padding: 0.5rem;
+  border-radius: 3px;
+  white-space: pre-wrap;
+}
+
+.no-transactions-message {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .transactions-table {
+    font-size: 0.8rem;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    padding: 0.5rem 0.25rem;
+  }
+
+  .fields-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .name-cell {
+    max-width: 150px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .transaction-row {
+    page-break-inside: avoid;
+  }
+
+  .details-row {
+    page-break-inside: avoid;
+  }
+}
