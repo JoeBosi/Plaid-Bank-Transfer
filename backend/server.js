@@ -386,6 +386,17 @@ if (SENTRY_ENABLED) app.use(Sentry.Handlers.errorHandler());
 // Apply error handling middleware (must be last)
 app.use(errorHandler);
 
+// Serve static files from frontend build (for production)
+if (process.env.NODE_ENV === 'production') {
+  const path = require('path');
+  app.use(express.static(path.join(__dirname, 'public')));
+  
+  // Handle React routing, return all requests to React app
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
+}
+
 // Start server
 app.listen(APP_PORT, () => {
   console.log(`\n========================================`);

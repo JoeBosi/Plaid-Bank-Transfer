@@ -1,0 +1,56 @@
+# Docker ignore file
+# Author: Giuseppe Bosi
+
+# Git
+.git
+.gitignore
+
+# Documentation
+*.md
+ARCHITECTURE.md
+DEPLOY_RENDER.md
+PROJECT_STATE.md
+SETUP_GUIDE.md
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dependencies (will be rebuilt)
+node_modules
+*/node_modules
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files (will be set in Railway)
+.env
+backend/.env
+frontend/.env
+
+# Test files
+coverage
+tests
+
+# Build artifacts
+build
+dist
+*/build
+*/dist
+
+# Temporary files
+*.tmp
+*.temp
+
+# Railway specific
+railway.toml
+render.yaml

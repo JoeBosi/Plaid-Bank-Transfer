@@ -1,0 +1,19 @@
+# Railway Configuration - Plaid-Bank-Transfer
+# Author: Giuseppe Bosi
+# Deploy: Connect this repo in Railway Dashboard
+
+[build]
+builder = "DOCKERFILE"
+
+[deploy]
+healthcheckPath = "/api/info"
+healthcheckTimeout = 100
+restartPolicyType = "ON_FAILURE"
+restartPolicyMaxRetries = 10
+
+# Environment variables (set these in Railway Dashboard)
+# PLAID_CLIENT_ID=your_plaid_client_id
+# PLAID_SECRET=your_plaid_secret  
+# PLAID_ENV=sandbox
+# SENTRY_DSN=your_sentry_dsn (optional)
+# REACT_APP_API_URL=https://your-backend-url.railway.app

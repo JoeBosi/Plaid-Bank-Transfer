@@ -200,7 +200,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Plaid-Bank-Transfer</h1>
+        <h3>GIUSEPPE BOSI TEST APP</h3>
         <p className="subtitle">Bank Transaction Monitor - Last 7 Days</p>
       </header>
 
