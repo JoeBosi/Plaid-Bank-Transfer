@@ -8,6 +8,7 @@ import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
 import './index.css';
 import App from './App';
+import ErrorBoundary from './ErrorBoundary';
 
 // Initialize Sentry
 Sentry.init({
@@ -24,9 +25,6 @@ Sentry.init({
   replaysSessionSampleRate: 0.1, // Sample 10% of sessions for replay
   replaysOnErrorSampleRate: 1.0, // Sample 100% of sessions with errors
 });
-
-// Import ErrorBoundary
-import ErrorBoundary from './ErrorBoundary';
 
 // Get root element and render App component
 const root = ReactDOM.createRoot(document.getElementById('root'));
